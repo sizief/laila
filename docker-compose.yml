@@ -1,0 +1,34 @@
+version: '2.1'
+services:
+  db:
+    image: postgres:9.4.5
+    volumes:
+      - /var/lib/postgresql/9.5/rails-matching:/var/lib/postgresql/data
+    ports:
+      - "5432"
+    env_file: .env
+    healthcheck:
+      test: ["CMD-SHELL", "psql -h localhost -p 5432 -U postgres -v ON_ERROR_STOP=1 -c 'select version()' &> /dev/null"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"] #Are you really up?
+      interval: 2s
+      timeout: 30s
+      retries: 15
+  app:
+    build: .
+    dns:
+     - 8.8.8.8
+    env_file: .env
+    environment:
+      RAILS_ENV: $RAILS_ENV
+      ENTRYPOINT: app
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db:db
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/usr/src/app
+    tty: true
+    stdin_open: true
