@@ -25,3 +25,8 @@ Check below also
 - validation for FulfilledOrder to have unique ActiveOrder match
 - do create and delete for Fulfilled in one transaction
 
+## FOR DOCKER
+- check the node version in .tools-version
+- check ruby verion in .ruby-version
+- bundle exec rails webpacker:install
+- rails assets:precompile
