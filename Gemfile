@@ -18,8 +18,6 @@ gem 'devise'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails', :group => :development
-  gem 'pry-remote'
-  gem 'pry-nav'
   gem 'rspec-rails', '~> 4.0.1'
 end
 
