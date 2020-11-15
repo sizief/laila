@@ -14,14 +14,9 @@ https://blog.shrimpy.io/blog/how-many-trades-crypto-exchanges-process
 
 # TODO
 - Specs
-- Rubocop
 - separate matching from rails
    -  remove after_commit hook on order models
-- set in config/environments/production.rb with actuall domain name
-`config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }`
-
-   
-   Check below also
+Check below also
 - FulfillOrder index on unique ActiveOrder request
 - FulfillOrder index on unique ActiveOrder match
 - FulfilledOrder db validation for uniquesness
