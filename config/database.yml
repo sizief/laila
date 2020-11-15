@@ -1,22 +1,27 @@
 default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
   adapter: <%= ENV["DATABASE_ADAPTER"] %> #sqlite3 or postgresql
   port: <%= ENV["POSTGRES_PORT"] %>
-  database: <%= ENV["POSTGRES_DB"] %> #localhost or db
+  timeout: 5000
 
 development:
   <<: *default
   host: <%= ENV["POSTGRES_HOST"] %>
   username: <%= ENV["POSTGRES_USER"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
+  database: <%= ENV["POSTGRES_DB"] %>
 
 test:
   <<: *default
+  host: <%= ENV["POSTGRES_HOST"] %>
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  database: <%= ENV["POSTGRES_DB_TEST"] %>
 
 production:
   <<: *default
   host: <%= ENV["POSTGRES_HOST"] %>
   username: <%= ENV["POSTGRES_USER"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
+  database: <%= ENV["POSTGRES_DB"] %>

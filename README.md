@@ -30,3 +30,6 @@ Check below also
 - check ruby verion in .ruby-version
 - bundle exec rails webpacker:install
 - rails assets:precompile
+
+## DB
+if local, then ` sudo -u postgres psql` 
