@@ -13,7 +13,7 @@ https://blog.shrimpy.io/blog/how-many-trades-crypto-exchanges-process
 
 
 # TODO
-- Specs
+- CI
 - separate matching from rails
    -  remove after_commit hook on order models
 Check below also
