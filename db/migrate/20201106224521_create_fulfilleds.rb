@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateFulfilleds < ActiveRecord::Migration[6.0]
   def change
     create_table :fulfilled_orders do |t|

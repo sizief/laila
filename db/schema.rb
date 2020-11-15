@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,45 +12,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_224521) do
-
+ActiveRecord::Schema.define(version: 20_201_106_224_521) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "active_orders", force: :cascade do |t|
-    t.string "position"
-    t.decimal "amount"
-    t.decimal "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "order_id"
-    t.index ["order_id"], name: "index_active_orders_on_order_id"
+  create_table 'active_orders', force: :cascade do |t|
+    t.string 'position'
+    t.decimal 'amount'
+    t.decimal 'price'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'order_id'
+    t.index ['order_id'], name: 'index_active_orders_on_order_id'
   end
 
-  create_table "fulfilled_orders", force: :cascade do |t|
-    t.decimal "amount"
-    t.decimal "price"
-    t.integer "request_order_id"
-    t.integer "match_order_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'fulfilled_orders', force: :cascade do |t|
+    t.decimal 'amount'
+    t.decimal 'price'
+    t.integer 'request_order_id'
+    t.integer 'match_order_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "position"
-    t.decimal "amount"
-    t.decimal "price"
-    t.boolean "fulfilled"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
+  create_table 'orders', force: :cascade do |t|
+    t.string 'position'
+    t.decimal 'amount'
+    t.decimal 'price'
+    t.boolean 'fulfilled'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'user_id'
+    t.index ['user_id'], name: 'index_orders_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
-
 end

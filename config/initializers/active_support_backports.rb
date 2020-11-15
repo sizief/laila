@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Fix IRB deprecation warning on tab-completion.
 #
 # Backports the fix for https://github.com/rails/rails/issues/37097
@@ -6,7 +8,6 @@
 # Backports proposed fix for https://github.com/rails/rails/pull/37468
 # from https://github.com/rails/rails/pull/37468
 module ActiveSupportBackports
-
   warn "[DEPRECATED] #{self} should no longer be needed. Please remove!" if Rails.version >= '6.1'
 
   def self.prepended(base)

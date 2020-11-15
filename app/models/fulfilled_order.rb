@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FulfilledOrder < ApplicationRecord
   after_create :fulfill_order
 
