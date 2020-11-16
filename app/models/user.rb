@@ -4,8 +4,7 @@ require 'securerandom'
 class User < ApplicationRecord
   has_many :orders
 
-  validates :email, :token, uniqueness: true
-  validates :token, :email, presence: true
+  validates :email, uniqueness: true
 
   before_create :create_token
 
