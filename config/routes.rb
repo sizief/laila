@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
-  get 'pages/index'
   get 'pages/profile'
+  get 'pages/index'
+
+  get 'token/index'
+  get 'token/delete'
 end

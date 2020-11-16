@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'securerandom'
 
 class User < ApplicationRecord
@@ -12,7 +13,7 @@ class User < ApplicationRecord
 
   before_create :create_token
 
-  scope :find_by_token, ->(token){ where token: token }
+  scope :find_by_token, ->(token) { where token: token }
 
   private
 
